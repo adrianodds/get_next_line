@@ -58,8 +58,7 @@ static char	*update_stash(char *stash, char *line)
 	{
 		return (free(stash), NULL);
 	}
-	free(stash);
-	return (temp_stash);
+	return (free(stash), temp_stash);
 }
 
 char	*get_next_line(int fd)
