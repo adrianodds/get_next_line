@@ -71,20 +71,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	len_str = ft_strlen(s);
-	if (!s)
+	if (!s || start >= len_str)
 		return (NULL);
-	if (start >= len_str)
-		return (NULL);
-	if (len > len_str - start)
-		len = len_str - start;
-	cp = (char *)malloc(len + 1);
+	cp = malloc(len + 1);
 	if (!cp)
 		return (NULL);
 	while (i < len)
-	{
-		cp[i] = s[start++];
-		i++;
-	}
+		cp[i++] = s[start++];
 	cp[i] = '\0';
 	return (cp);
 }

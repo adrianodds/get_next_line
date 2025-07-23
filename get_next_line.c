@@ -55,9 +55,7 @@ static char	*update_stash(char *stash, char *line)
 	temp_stash = ft_substr(stash, ft_strlen(line), ft_strlen(stash)
 			- ft_strlen(line));
 	if (!temp_stash)
-	{
 		return (free(stash), NULL);
-	}
 	return (free(stash), temp_stash);
 }
 
@@ -65,7 +63,7 @@ char	*get_next_line(int fd)
 {
 	static char	*stash;
 	char		*line;
-
+	
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	stash = read_line(fd, stash);
@@ -83,7 +81,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-/* int main(void)
+/*int main(void)
 {
 	int fd = open("name.txt", O_RDONLY);
 	char *line;
